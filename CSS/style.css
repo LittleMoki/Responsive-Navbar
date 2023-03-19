@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+	font-family: 'Montserrat', sans-serif;
+}
+
+body {
+	height: 100vh;
+	background-color: #000;
+	background-image: url(../IMG/background_img.jpeg);
+	background-size: cover;
+	background-position: center;
+}
+
+
+/* header */
+.header {
+	padding: 0 100px;
+}
+
+.navbar {
+	width: 100%;
+	max-width: 1200px;
+	height: 60px;
+	display: flex;
+	justify-content: space-between;
+	margin: 0 auto;
+	align-items: center;
+}
+
+.navbar .logo a {
+	font-size: 25px;
+	font-weight: bold;
+	color: white;
+	transition: all .3s;
+}
+
+.navbar .logo a:hover {
+	color: coral;
+}
+
+.links ul {
+	display: flex;
+	gap: 30px;
+}
+
+.links a {
+	color: white;
+}
+
+.links a:hover {
+	transition: all .3s;
+	color: coral;
+}
+
+.navbar .toggle_btn {
+	color: white;
+	font-size: 25px;
+	cursor: pointer;
+	display: none;
+}
+
+.action_btn {
+	background-color: coral;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+	outline: none;
+	font-size: 12px;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 32px;
+}
+
+.action_btn:hover {
+	color: white;
+	scale: 1.1;
+}
+
+.action_btn:active {
+	scale: .95;
+}
+
+/* dropdown_menu */
+.dropdown_menu{
+	display: none;
+	height: 0px;
+	position: absolute;
+	right: 100px;
+	top: 60px;
+	width: 300px;
+	background-color: rgba(250, 250, 250, 0.1);
+	backdrop-filter: blur (15px);
+	border-radius: 10px;
+	overflow: hidden;
+	transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.dropdown_menu.open{
+	height: 220px;
+}
+.dropdown_menu .action_btn:hover{
+	color: white;
+}
+
+.dropdown_menu li{
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.dropdown_menu .action_btn{
+	width: 95%;
+	display: flex;
+	justify-content: center;
+}
+
+.dropdown_menu a{
+	color: white;
+	transition: all .3s;
+}
+.dropdown_menu a:hover{
+	color: coral;
+}
+
+/* .hero */
+.section#hero{
+	margin-top: 250px;
+	text-align: center;
+	color: white;
+}
+#hero h1{
+	font-weight: bold;
+	font-size: 40px;
+}
+
+/* adaptive */
+
+@media(max-width:992px) {
+
+	.navbar .links,
+	.navbar .action_btn {
+		display: none;
+	}
+
+	.navbar .toggle_btn {
+		display: block;
+	}
+	
+	.dropdown_menu{
+		display: block;
+	}
+}
+
+@media(max-width:576px){
+	.dropdown_menu {
+		left: 95px;
+		width: unset;
+	}
+}
